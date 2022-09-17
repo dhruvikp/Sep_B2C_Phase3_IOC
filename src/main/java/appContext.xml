@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+	<bean id="address" class="com.simplilearn.model.Address">
+		<property name="city" value="Bangalore"></property>
+		<property name="state" value="Karnataka"></property>
+		<property name="country" value="India"></property>
+	</bean>
+	
+	<bean id="e1" class="com.simplilearn.model.Employee" autowire="byName">
+		<property name="firstName" value="Madhuri"></property>
+		<property name="lastName" value="Allam"></property>
+		<!-- <property name="address" ref="a1"></property> -->
+	</bean>
+	
+	<bean id="e2" class="com.simplilearn.model.Employee">
+		<property name="firstName" value="Megha"></property>
+		<property name="lastName" value="Saxena"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+</beans>
